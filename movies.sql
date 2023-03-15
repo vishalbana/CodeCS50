@@ -1,0 +1,13 @@
+SELECT title FROM movies WHERE year = '2008';
+SELECT birth FROM people WHERE name = 'Emma Stone';
+SELECT title FROM movies WHERE year >= '2018' ORDER BY title ASC;
+SELECT COUNT(rating) FROM ratings WHERE rating = '10.0';
+SELECT title, year FROM movies WHERE title LIKE 'Harry Potter%' ORDER BY year;
+SELECT AVG(rating) FROM ratings WHERE movie_id IN(SELECT id FROM movies WHERE year = '2012');
+SELECT title, rating FROM movies JOIN ratings ON id = movie_id WHERE year = '2010' ORDER BY rating DESC, title ASC;
+SELECT name FROM people JOIN stars ON people.id = person_id JOIN movies ON movie_id = movies.id WHERE title = "Toy Story";
+SELECT DISTINCT name FROM people JOIN stars ON people.id = person_id JOIN movies ON movie_id = movies.id WHERE year = '2004' ORDER BY birth;
+SELECT DISTINCT name FROM people JOIN directors ON people.id = person_id JOIN ratings ON directors.movie_id = ratings.movie_id WHERE rating >= '9.0';
+SELECT title FROM movies JOIN ratings ON movies.id = ratings.movie_id JOIN stars ON ratings.movie_id = stars.movie_id JOIN people ON stars.person_id = people.id WHERE name = "Chadwick Boseman" ORDER BY rating DESC LIMIT 5;
+SELECT title FROM movies JOIN stars ON movies.id = stars.movie_id JOIN people ON stars.person_id = people.id WHERE name = "Helena Bonham Carter" AND title IN (SELECT title FROM movies JOIN stars ON movies.id = stars.movie_id JOIN people ON stars.person_id = people.id WHERE name = "Johnny Depp");
+SELECT DISTINCT name FROM people JOIN stars ON people.id = stars.person_id JOIN movies on stars.movie_id = movies.id WHERE movies.id IN (SELECT movies.id FROM movies JOIN stars on movies.id = stars.movie_id JOIN people ON stars.person_id = people.id WHERE name = "Kevin Bacon" AND birth = "1958") AND NOT name = "Kevin Bacon"; 
