@@ -1,0 +1,44 @@
+.bg_color{
+   background-color: #ffB6C1;
+   opacity: 0.8;
+}
+.h1_color{
+   color: blue;
+}
+.p_color{
+   color: red;
+   border: 5px solid white;
+}
+}
+.text_decor{
+   text-decoration: underline solid black 10%;
+   text-decoration-thickness: 5px:
+}
+.font{
+   font-family: "Times New Roman", Times, serif;
+}
+.position1{
+  position: absolute;
+  left: 100px;
+  top: 150px;
+}
+.position2{
+  position: absolute;
+  right: 100px;
+  top: 150px;
+}
+.position3{
+  position: absolute;
+  left: 100px;
+  top: 15px;
+}
+.position4{
+  position: absolute;
+  right: 100px;
+  top: 15px;
+}
+.position5{
+  position: absolute;
+  right: 108px;
+  top: 65px;
+}
